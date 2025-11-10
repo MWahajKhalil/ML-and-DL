@@ -11,6 +11,9 @@ print(df.head())
 print("\nSUMMARY:")
 print(df.describe())
 
+print("\nINFO:")
+print(df.info())    
+
 # Pairplot
 sns.pairplot(df, hue="species")
 plt.show()
@@ -24,5 +27,8 @@ plt.scatter(df['sepal_length'], df['petal_length'])
 plt.xlabel("Sepal Length")
 plt.ylabel("Petal Length")
 plt.show()
+
+print("This is a test change for github")
+
 
 
