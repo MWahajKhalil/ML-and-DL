@@ -10,7 +10,6 @@ print(df.head())
 
 print("\nSUMMARY:")
 print(df.describe())
-
 print("\nINFO:")
 print(df.info())    
 
