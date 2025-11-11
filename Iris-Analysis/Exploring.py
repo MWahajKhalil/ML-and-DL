@@ -17,7 +17,7 @@ for species in df['species'].unique():
     print(species_data.describe()) # Summary statistics for each species
     species_df[species] = species_data
 
-species_df[species].hist(bins=15, figsize=(10, 6))
+print(species_df['virginica'])
 
 # Missing values
 Missing_values = df.isnull().sum()
@@ -28,6 +28,9 @@ print(Missing_values)
 # Correlation matrix using only numeric columns
 corr = df.corr(numeric_only=True)
 print("Correlation Matrix:\n", corr)
+
+
+# Heatmap of the correlation matrix
 
 plt.figure(figsize=(8,6))
 sns.heatmap(corr, annot=True, cmap="coolwarm")
@@ -57,6 +60,12 @@ plt.title("Boxplot of Sepal Length by Species")
 
 plt.show() #plot boxplot
 
-print("\nDATA TYPES:")
 
-print(df.dtypes)  # Data types of each column
+
+ # Data types of each column
+
+# Violin plots for each feature by species
+for col in df.columns[:-1]:
+    sns.violinplot(x='species', y=col, data=df)
+    plt.title(f"{col} Distribution by Species")
+    plt.show()
