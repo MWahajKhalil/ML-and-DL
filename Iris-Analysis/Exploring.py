@@ -64,11 +64,4 @@ plt.show() #plot boxplot
 
  # Data types of each column
 
-# each feature relationship by species
-for col in df.columns[:-1]:  # Exclude the species column (loop iterates 4 times)
-    sns.violinplot(x='species', y=col, data=df)
-    plt.title(f"{col} Distribution by Species")
-    plt.xlabel("Species")
-    plt.show()
-
 
